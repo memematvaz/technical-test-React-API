@@ -1,12 +1,15 @@
 const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
 
 module.exports = {
     entry: './src/frontend/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js'
+        filename: 'bundle.js',
+        publicPath: '/public/',
+        hotUpdateChunkFilename: 'hot/hot-update.js',
+        hotUpdateMainFilename: 'hot/hot-update.json'
     },
     resolve: {
         extensions: ['.js']
@@ -32,11 +35,10 @@ module.exports = {
             test: /\.styl$/,
             use: [
               {
-                loader: MiniCssExtractPlugin.loader,
+                loader: 'stylus-loader',
               },
-              'css-loader',
-              'stylus-loader'
-            ]
+              
+            ],
           },
         ]
     },

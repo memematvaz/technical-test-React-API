@@ -6,11 +6,15 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+    "autoprefixer": "^10.0.1",
+    "autoprefixer-stylus": "^1.0.0",
     "core-util-is": "^1.0.2",
     "glob": "^7.1.6",
+    "poststylus": "^1.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3"
+    "react-scripts": "3.4.3",
+    "yarn": "^1.22.10"
   },
   "scripts": {
     "start": "webpack-dev-server --open --mode development",
