@@ -27,6 +27,14 @@ module.exports = {
               }
             ]
           },
+          {
+            test: /\.styl$/,
+            use: [
+              {
+                loader: 'stylus-loader',
+              }
+            ]
+          },
         ]
     },
     plugins: [
