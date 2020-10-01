@@ -1,13 +1,13 @@
 import React from 'react';
 import Header from './components/Header.js';
-import PokeList from './components/PokeList.js';
+import CharacterList from './components/CharacterList.js';
 
 
 const App = () => {
   return (
     <div className="App">
         <Header/>
-        <PokeList/>
+        <CharacterList/>
     </div>
   )
 }

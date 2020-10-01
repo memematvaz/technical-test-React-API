@@ -6,6 +6,6 @@ const Filter = () => {
             <input type="text" className="filter__search" placeholder="Search..."></input>
         </section>
     )
-  }
+}
   
-  export default Filter;
+export default Filter;

@@ -35,6 +35,17 @@ module.exports = {
                 'stylus-loader'
               ],
           },
+          {
+            test: /\.(png|git|jpg|svg)$/,
+            use: [
+                {
+                  'loader' : 'file-loader',
+                  options: {
+                    name: 'assets/[hash].[ex]'
+                  }
+                }
+              ],
+          },
         ]
     },
     plugins: [
