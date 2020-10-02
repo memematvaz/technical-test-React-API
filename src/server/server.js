@@ -21,7 +21,26 @@ if(ENV === 'development') {
 }
 
 app.get('*', (req, res) => {
-    res.send({ hello: 'express' })
+    res.send(`
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <meta name="theme-color" content="#000000" />
+            <meta
+            name="description"
+            content="Web site created using create-react-app"
+            />
+            <link  rel="stylesheet" href="assets/styles/styles.styl" type="text"/>
+            <title>Breaking Bad Characters</title>
+        </head>
+        <body>
+            <div id="root"></div>
+            <script src="assets/app.js" type="text/javascript"></script>
+        </body>
+        </html>`
+    )
 });
 
 app.listen(PORT, (err) => {
