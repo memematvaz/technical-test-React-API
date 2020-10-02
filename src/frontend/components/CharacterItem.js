@@ -1,12 +1,12 @@
 import React from 'react'
 
-const CharacterItem = () => {
+const CharacterItem = (props) => {
     return (
-        <div className="card" id={props.key}>
-            <img src={props.image} alt={props.name} className="card__img"></img>
+        <div className="card" key={props.id}>
+            <img src={props.img} alt={props.name} className="card__img"></img>
             <div className="card__details" >
-                <h2>{props.name}</h2>
-                   
+                <h2>{props.name}</h2>   
+                <p>{`${props.nickname} appears in ${props.appearance.length} seasons of Breaking Bad`}</p> 
             </div>
 
         </div>

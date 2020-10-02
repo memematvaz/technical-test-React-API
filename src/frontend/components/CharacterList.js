@@ -3,6 +3,7 @@ import Filter from './Filter';
 import CharacterItem from './CharacterItem';
 
 const CharacterList = () => {
+    
     const [characters, setCharacters] = useState([]);
     const ENDPOINT = 'https://breakingbadapi.com/api/characters'
 
@@ -13,14 +14,18 @@ const CharacterList = () => {
     }, []);
 
     console.log(characters)
-
     return (
     <>  
         <Filter/>
         <ul className="characterlist">
-            {characters.map(characterObject =>
+            {characters.map(characterObject => 
                 <li className="characterlist__item" key={characterObject.char_id}>
-                    <CharacterItem />
+                    <CharacterItem  
+                        id={characterObject.char_id}
+                        img={characterObject.img}
+                        name={characterObject.name}
+                        nickname={characterObject.mickname}
+                        appearance={characterObject.appearance}/>
                 </li>
             )}
         </ul>
