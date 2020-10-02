@@ -12,7 +12,11 @@
     "nodemon": "^2.0.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3"
+    "react-hot-loader": "^4.13.0",
+    "react-scripts": "3.4.3",
+    "webpack": "^4.44.2",
+    "webpack-dev-middleware": "^3.7.2",
+    "webpack-hot-middleware": "^2.25.0"
   },
   "scripts": {
     "start": "webpack-dev-server --open --mode development",
@@ -47,7 +51,6 @@
     "source-map-loader": "^1.0.0",
     "stylus": "0.54.8",
     "stylus-loader": "^4.1.0",
-    "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
   }
