@@ -41,7 +41,7 @@
     "html-webpack-plugin": "^4.5.0",
     "source-map-loader": "^1.0.0",
     "stylus": "0.54.8",
-    "stylus-loader": "^4.0.0",
+    "stylus-loader": "^4.1.0",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
