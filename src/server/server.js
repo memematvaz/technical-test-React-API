@@ -1,7 +1,10 @@
+/*import React from 'react'
+import { renderToString } from 'react-dom/server';
+import useInitialState from '../frontend/hooks/useInitialState'*/
+
 import express from 'express';
 import dotenv from 'dotenv';
 import webpack from 'webpack';
-
 
 dotenv.config();
 
@@ -19,6 +22,14 @@ if(ENV === 'development') {
     app.use(webpackDevMiddleware(compiler, serverConfig));
     app.use(webpackHotMiddleware(compiler))
 }
+
+/*const renderApp = (req, res) => {
+    const html = renderToString(
+        <Provider>
+
+        </Provider>
+    )
+}*/
 
 app.get('*', (req, res) => {
     res.send(`
