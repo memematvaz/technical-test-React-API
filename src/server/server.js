@@ -1,6 +1,7 @@
-/*import React from 'react'
+import React from 'react'
 import { renderToString } from 'react-dom/server';
-import useInitialState from '../frontend/hooks/useInitialState'*/
+/*import useInitialState from '../frontend/hooks/useInitialState'*/
+import App from '../frontend/App.js';
 
 import express from 'express';
 import dotenv from 'dotenv';
@@ -21,18 +22,12 @@ if(ENV === 'development') {
 
     app.use(webpackDevMiddleware(compiler, serverConfig));
     app.use(webpackHotMiddleware(compiler))
+} else{
+    app.use(express.static(`${__dirname}/public`));
 }
 
-/*const renderApp = (req, res) => {
-    const html = renderToString(
-        <Provider>
-
-        </Provider>
-    )
-}*/
-
-app.get('*', (req, res) => {
-    res.send(`
+const setResponse = (html) => {
+    return(`
         <!DOCTYPE html>
         <html lang="en">
         <head>
@@ -47,12 +42,21 @@ app.get('*', (req, res) => {
             <title>Breaking Bad Characters</title>
         </head>
         <body>
-            <div id="root"></div>
+            <div id="root">${html}</div>
             <script src="assets/app.js" type="text/javascript"></script>
         </body>
-        </html>`
-    )
-});
+        </html>
+    `)    
+}
+
+const renderApp = (req, res) => {
+    const html = renderToString(
+        <App/>
+    );
+    res.send(setResponse(html))
+}
+
+app.get('*', renderApp);
 
 app.listen(PORT, (err) => {
     if(err) console.log(err);
