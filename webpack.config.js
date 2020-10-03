@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack')
+const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: ['./src/frontend/index.js', 'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=2000&reload=true'
@@ -7,7 +8,7 @@ module.exports = {
     mode: 'development',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'assets/app.js'
+        filename: 'bundle.js'
     },
     resolve: {
         extensions: ['.js']
@@ -53,5 +54,9 @@ module.exports = {
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
 
-    ]    
+        new HtmlWebPackPlugin({
+            template: './public/index.html',
+            filename: './index.html'
+        })
+    ]
 }

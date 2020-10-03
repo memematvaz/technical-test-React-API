@@ -50,8 +50,9 @@ const setResponse = (html) => {
 }
 
 const renderApp = (req, res) => {
+
     const html = renderToString(
-        <App/>
+        <App />
     );
     res.send(setResponse(html))
 }
@@ -60,5 +61,5 @@ app.get('*', renderApp);
 
 app.listen(PORT, (err) => {
     if(err) console.log(err);
-    else console.log('Server running on port 3000')
+    else console.log(`Server running on ${PORT}`)
 })
